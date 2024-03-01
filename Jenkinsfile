@@ -18,7 +18,7 @@ pipeline {
             steps {
                 withSonarQubeEnv('SONAR_LOCAL') {
                     bat script: """
-                        "${scannerHome}/bin/sonar-scanner" -e ^
+                        "${scannerHome}/bin/sonar-scanner" ^
                         -Dsonar.projectKey=DeployBack ^
                         -Dsonar.host.url=http://localhost:9000 ^
                         -Dsonar.login=42632a7ae0f49d633e268018706f64cb1912f4cd ^
@@ -28,8 +28,8 @@ pipeline {
                         -Dsonar.java.sources=src/main ^
                         -Dsonar.coverage.exclusions='**/.mvn/**,**/src/test/**,**/model/**,**Application.java' ^
                         -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml ^
-                        -Dsonar.java.libraries='C:/Program Files/Maven/lib' ^
-                        -Dsonar.java.test.libraries='C:/Program Files/Maven/lib'
+                        -Dsonar.java.libraries='C:\\Program Files\\Maven\\lib' ^
+                        -Dsonar.java.test.libraries='C:\\Program Files\\Maven\\lib'
                     """
                 }
             }
