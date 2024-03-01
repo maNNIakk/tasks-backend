@@ -26,7 +26,7 @@ pipeline {
                         -Dsonar.qualitygate.wait=true ^
                         -Dsonar.java.test.sources=src/test ^
                         -Dsonar.java.sources=src/main ^
-                        -Dsonar.coverage.exclusions='**/.mvn/**,**/src/test/**,**/model/**,**Application.java' ^
+                        -Dsonar.coverage.exclusions="**/.mvn/**,**/src/test/**,**/model/**,**Application.java" ^
                         -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml ^
                         -Dsonar.java.libraries="C:/Program Files/Maven/lib" 
                         -Dsonar.java.test.libraries="C:/Program Files/Maven/lib"
